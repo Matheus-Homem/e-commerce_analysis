@@ -1,0 +1,355 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "GET from API",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Row ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Row ID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Order ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Order ID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Data da Venda",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Data da Venda",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Prioridade",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Prioridade",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Quantidade",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Quantidade",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Valor da Venda",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Valor da Venda",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Desconto",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Desconto",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Forma de Envio",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Forma de Envio",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Lucro",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Lucro",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Preço Unitário",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Preço Unitário",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Custo de Envio",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Custo de Envio",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nome do Cliente",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Nome do Cliente",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Cidade",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Cidade",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CEP",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CEP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Estado",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Estado",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Região",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Região",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "País",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "País",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Segmento do Cliente",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Segmento do Cliente",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Categoria do Produto",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Categoria do Produto",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Sub-Categoria do Produto",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Sub-Categoria do Produto",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nome do Produto",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Nome do Produto",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Embalagem",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Embalagem",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Margem",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Margem",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Data de Envio",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Data de Envio",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
