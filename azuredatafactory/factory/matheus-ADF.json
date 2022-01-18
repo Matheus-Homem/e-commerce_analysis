@@ -1,0 +1,9 @@
+{
+	"name": "matheus-ADF",
+	"location": "southcentralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5f5a095d-9615-4e0c-875e-635e6d188cb0",
+		"tenantId": "e64d8f66-6ff2-4025-8991-3da55f6f3ec8"
+	}
+}
